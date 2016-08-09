@@ -1,0 +1,3 @@
+class ConfigureLocale
+
+end
