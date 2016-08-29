@@ -1,13 +1,13 @@
 # -*- encoding: utf-8 -*-
 $LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
-require 'qa_i18n/version'
+require 'beaker-qa-i18n/version'
 
 Gem::Specification.new do |s|
   s.name        = "beaker-qa-i18n"
-  s.version     = Beaker::DSL::Helpers::QaI18n::Version::STRING
+  s.version     = Beaker::DSL::Helpers::BeakerQaI18n::Version::STRING
   s.authors     = ["Puppetlabs"]
   s.email       = ["qe-team@puppetlabs.com"]
-  s.homepage    = "https://github.com/puppetlabs/qa_i18n"
+  s.homepage    = "https://github.com/puppetlabs/beaker-qa-i18n"
   s.summary     = %q{Beaker DSL Extension Helpers to assist in testing i18n!}
   s.description = %q{For use for the Beaker acceptance testing tool}
   s.license     = 'Apache2'

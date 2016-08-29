@@ -1,5 +1,5 @@
 require 'simplecov'
-require 'qa_i18n'
+require 'beaker-qa-i18n'
 require 'helpers'
 
 require 'rspec/its'
