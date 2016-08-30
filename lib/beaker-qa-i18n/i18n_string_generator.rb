@@ -1,7 +1,7 @@
 module Beaker
   module DSL
     module Helpers
-      module QaI18n
+      module BeakerQaI18n
         module I18nStringGenerator
           CHINESE_CHARACTERS =[*"\u4E00".."\u4E20"]
           GERMAN_CHARACTERS  =["\u00C4", "\u00E4", "\u00D6", "\u00F6", "\u00DC", "\u00FC"]
@@ -20,6 +20,14 @@ module Beaker
             seed ||= Random.new_seed
             logger.debug "random seed used: #{seed}"
             Random.new(seed)
+          end
+
+          # Gets a string consisting of all values in this library for the specified character type
+          # @param [Symbol] character_type - :chinese, :german, :english, :numeric, :max_length, :white_space, :syntax
+          # @return [String] - a string containing all of the characters from the character type
+          def get_i18n_string(character_type)
+            array = instance_eval("#{character_type.to_s.upcase}_CHARACTERS")
+            get_strings_of_length_from_char_array(array, nil)
           end
 
           # produces a random multiple language string including Chinese, German and English characters
@@ -131,11 +139,11 @@ module Beaker
             get_strings_of_length_from_char_array(MAX_LENGTH_CHARACTERS, string_length).each { |string|
               yield string
             }
-            logger.debug 'Testing syntax characters'
+            logger.debug 'Testing syntax characters' unless exclude.include?(:syntax)
             get_strings_of_length_from_char_array(SYNTAX_CHARACTERS, string_length).each { |string|
               yield string
             } unless exclude.include?(:syntax)
-            logger.debug 'Testing white space characters'
+            logger.debug 'Testing white space characters' unless exclude.include?(:white_space)
             get_strings_of_length_from_char_array(WHITE_SPACE_CHARACTERS, string_length).each { |string|
               yield string
             } unless exclude.include?(:white_space)
@@ -143,6 +151,7 @@ module Beaker
 
 
           def get_strings_of_length_from_char_array(array, string_length)
+            string_length ||= array.length
             strings = []
             if (array.length == string_length)
               strings.push(array.join('').encode('UTF-8'))

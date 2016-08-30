@@ -1,9 +1,9 @@
 module Beaker
   module DSL
     module Helpers
-      module QaI18n
+      module BeakerQaI18n
         module Version
-          STRING = '0.0.1'
+          STRING = '0.0.4'
         end
       end
     end

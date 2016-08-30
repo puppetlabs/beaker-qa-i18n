@@ -1,3 +1,0 @@
-module FormatValidator
-
-end

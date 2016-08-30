@@ -1,5 +1,5 @@
 class ClassMixedWithDSLHelpers
-  include Beaker::DSL::Helpers::QaI18n::I18nStringGenerator
+  include Beaker::DSL::Helpers::BeakerQaI18n::I18nStringGenerator
 
   def logger
     RSpec::Mocks::Double.new('logger').as_null_object
