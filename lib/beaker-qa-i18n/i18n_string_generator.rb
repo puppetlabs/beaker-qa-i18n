@@ -27,7 +27,7 @@ module Beaker
           # @return [String] - a string containing all of the characters from the character type
           def get_i18n_string(character_type)
             array = instance_eval("#{character_type.to_s.upcase}_CHARACTERS")
-            get_strings_of_length_from_char_array(array, nil)
+            get_strings_of_length_from_char_array(array, nil)[0]
           end
 
           # produces a random multiple language string including Chinese, German and English characters
