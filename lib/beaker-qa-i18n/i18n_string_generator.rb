@@ -53,6 +53,10 @@ module Beaker
             chars[0..(length-2)] + '.'
           end
 
+          def get_test_string(len = 5)
+            CHINESE_CHARACTERS[0...len] + ENGLISH_CHARACTERS[0...len] + GERMAN_CHARACTERS[0...len] + SYNTAX_CHARACTERS[0...len]
+          end
+
           # produces a random Chinese language string
           # The Chinese, Japanese and Korean (CJK) scripts share a common background, collectively known as CJK characters
           # @param [Int] length - Length of string desired
