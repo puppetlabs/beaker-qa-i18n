@@ -1,4 +1,5 @@
 require 'simplecov'
+require 'beaker'
 require 'beaker-qa-i18n'
 require 'helpers'
 
