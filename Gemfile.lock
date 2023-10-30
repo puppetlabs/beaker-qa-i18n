@@ -234,6 +234,8 @@ GEM
     net-ssh (2.9.4)
     nokogiri (1.15.2-aarch64-linux)
       racc (~> 1.4)
+    nokogiri (1.15.2-x86_64-linux)
+      racc (~> 1.4)
     open_uri_redirections (0.2.1)
     os (1.1.4)
     props (1.2.0)
@@ -244,7 +246,7 @@ GEM
     public_suffix (1.4.6)
     racc (1.7.1)
     rack (2.2.7)
-    rake (13.0.6)
+    rake (13.1.0)
     rbvmomi (1.8.5)
       builder
       nokogiri (>= 1.4.1)
@@ -306,6 +308,7 @@ GEM
 
 PLATFORMS
   aarch64-linux
+  x86_64-linux
 
 DEPENDENCIES
   beaker (~> 2.0)
